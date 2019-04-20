@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # This script installs the dependencies required by cypress.io tool
 # on amazon linux AMI as the required dependencies are not easily available.
