@@ -1,3 +1,5 @@
 #!/bin/sh
 
-/usr/local/bin/npm run cy:run
+PATH="/usr/local/bin:$PATH"
+
+/usr/local/bin/npm --prefix /Users/abhijithmanohar/WebstormProjects/Udemy/OPTStatusCheck run cy:run

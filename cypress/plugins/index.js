@@ -23,7 +23,7 @@ module.exports = (on, config) => {
             return null
         },
 
-        sendMail (message) {
+        sendMail ({text,name,email,appNumber}) {
             var nodemailer = require('nodemailer');
 
             var transporter = nodemailer.createTransport({
@@ -36,9 +36,9 @@ module.exports = (on, config) => {
 
             var mailOptions = {
                 from: 'testdummynode@gmail.com',
-                to: 'abhijith2893@gmail.com',
+                to: email,
                 subject: 'Sending Email using Node.js',
-                text: message
+                text: `OPT Status of ${name} (${appNumber}) \n ${text}`
             };
 
             transporter.sendMail(mailOptions, function(error, info){
@@ -47,16 +47,13 @@ module.exports = (on, config) => {
                 } else {
                     console.log('Email sent: ' + info.response)
                 }
-            })
+            });
 
             return null
 
         }
 
     })
-
-
-
 
 
 }
