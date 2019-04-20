@@ -1,0 +1,18 @@
+{
+  "name": "optstatuscheck",
+  "version": "1.0.0",
+  "description": "To check the status of OPT",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "cypress run --spec \"cypress/integration/statusCheck.js\"",
+    "cy:open": "./node_modules/.bin/cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^3.2.0",
+    "nodemailer": "^6.1.0",
+    "sendmail": "^1.4.1"
+  }
+}
