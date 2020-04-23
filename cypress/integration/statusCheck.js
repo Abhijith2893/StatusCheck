@@ -1,17 +1,14 @@
 describe('Check status of OPT',function(){
 
-    beforeEach(function(){
-        cy.visit('https://egov.uscis.gov/casestatus/landing.do');
-    });
+    // beforeEach(function(){
+    //     cy.visit('https://egov.uscis.gov/casestatus/landing.do');
+    // });
 
     it('Check OPT status - Abhijith',function(){
-        checkStatus('YSC1990163276','Abhijith','abhijith2893@gmail.com')
-
-    });
-
-    it('Check OPT status - Philip',function(){
-        checkStatus('YSC1990160493','Philip','philipthomas7394@gmail.com')
-
+        cy.visit('https://egov.uscis.gov/casestatus/landing.do')
+            .then(()=>{
+                checkStatus('YSC2090213972','Abhijith','abhijith2893@gmail.com')
+            })
     });
 
     function checkStatus (appNumber,name,email){
