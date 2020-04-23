@@ -1,5 +1,5 @@
 #!/bin/sh
 
-PATH="~/.nvm/versions/node/v11.14.0/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
 
-~/.nvm/versions/node/v11.14.0/bin/npm --prefix /home/ec2-user/StatusCheck run cy:run
+/usr/local/bin/npm --prefix /Users/abhijithmanohar/WebstormProjects/Udemy/OPTStatusCheck run cy:run
