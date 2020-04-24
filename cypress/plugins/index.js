@@ -29,8 +29,8 @@ module.exports = (on, config) => {
             var transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: 'testdummynode@gmail.com',
-                    pass: 'Testtest123'
+                    user: '',
+                    pass: ''
                 }
             });
 
@@ -51,7 +51,37 @@ module.exports = (on, config) => {
 
             return null
 
-        }
+        },
+
+	    sendSMS({text,name,email,appNumber}){
+			
+		    // Load the AWS SDK for Node.js
+var AWS = require('aws-sdk');
+// Set region
+AWS.config.update({region: 'us-east-1'});
+
+// Create publish parameters
+var params = {
+  Message: `OPT Status of ${name} (${appNumber}) \n ${text}`, /* required */
+  TopicArn: 'arn:aws:sns:us-east-1:817648391599:OPT_status'
+};
+
+// Create promise and SNS service object
+const credentials = new AWS.SharedIniFileCredentials({profile: 'sns_profile'});
+const sns = new AWS.SNS({credentials: credentials, region: 'us-east-1'});
+var publishTextPromise = sns.publish(params).promise();
+
+// Handle promise's fulfilled/rejected states
+publishTextPromise.then(
+  function(data) {
+    console.log(`Message ${params.Message} send sent to the topic ${params.TopicArn}`);
+    console.log("MessageID is " + data.MessageId);
+  }).catch(
+    function(err) {
+    console.error(err, err.stack);
+  });
+			return null
+	    }
 
     })
 
