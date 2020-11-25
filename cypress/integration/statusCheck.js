@@ -1,14 +1,10 @@
 describe('Check status of OPT',function(){
 
-    // beforeEach(function(){
-    //     cy.visit('https://egov.uscis.gov/casestatus/landing.do');
-    // });
-
     it('Check OPT status - Abhijith',function(){
         cy.visit('https://egov.uscis.gov/casestatus/landing.do')
             .then(()=>{
 		    cy.wait(2000)
-                checkStatus('YSC2090213972','Abhijith','abhijith2893@gmail.com')
+                checkStatus('','','') //Pass in application number, name and email
             })
     });
 
@@ -21,7 +17,6 @@ describe('Check status of OPT',function(){
         cy.get('h1').invoke('text').then((text)=>{
             cy.task('log',text)
 		cy.task('sendSMS',{text,name,email,appNumber})
-            //cy.task('sendMail',{text,name,email,appNumber})
                 .then(()=>{
                     cy.wait(5000)
                 })
