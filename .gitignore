@@ -1,5 +1,7 @@
-cronjob-myNodeApp.sh
 .gitignore
-node_modules
+.vscode
+node_modules/
+package-lock.json
+
 cypress/videos
 cypress/screenshots

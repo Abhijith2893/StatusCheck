@@ -1,6 +1,6 @@
 describe('Check status of OPT',function(){
 
-    it('Check OPT status - Abhijith',function(){
+    it('Check OPT status',function(){
         cy.visit('https://egov.uscis.gov/casestatus/landing.do')
             .then(()=>{
 		    cy.wait(2000)
