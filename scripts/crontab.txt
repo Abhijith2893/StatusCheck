@@ -1,0 +1,2 @@
+0 10 * * * sh $HOME/StatusCheck/cronjob-myNodeApp.sh
+30 22 * * * sh $HOME/StatusCheck/cronjob-myNodeApp.sh

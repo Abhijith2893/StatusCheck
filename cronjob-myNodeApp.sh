@@ -1,4 +1,4 @@
 #!/bin/sh
 
-chmod +x scripts/cypress.sh
-./scripts/cypress.sh
+chmod +x $HOME/StatusCheck/scripts/cypress.sh
+sudo sh $HOME/StatusCheck/scripts/cypress.sh

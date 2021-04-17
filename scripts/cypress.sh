@@ -1,5 +1,5 @@
 docker run \
--v $PWD:/e2e \
+-v $HOME/StatusCheck:/e2e \
 -v ~/.aws:/root/.aws \
 -w /e2e \
 --entrypoint npm \
